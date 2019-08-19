@@ -161,7 +161,8 @@ def redis_connect():
     """
     Redis connection
     """
-    herokuredis_url = os.getenv('HEROKUREDIS_URL', None)
+    herokuredis_url = os.getenv('REDIS_URL', None)
+    logging.warning(str(herokuredis_url))
     if herokuredis_url == None:
         REDIS_HOST = 'localhost'
         REDIS_PORT = 6379
